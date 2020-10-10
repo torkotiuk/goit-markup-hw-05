@@ -1,6 +1,6 @@
 :root {
-  --main-font: 'Roboto', sans-serif;
-  --secondary-font: 'Raleway', sans-serif;
+  --main-font: "Roboto", sans-serif;
+  --secondary-font: "Raleway", sans-serif;
   --title-color: #212121;
   --description-color: #757575;
   --adress-header-color: #757575;
@@ -180,7 +180,7 @@ img {
   position: absolute;
   left: 0;
   bottom: -234%;
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 4px;
@@ -227,12 +227,7 @@ img {
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../images/hero.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .hero .container {
@@ -274,13 +269,14 @@ img {
   cursor: pointer;
 }
 
-.backdrop {
+/* backdrop opening V1 */
+
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-
   background-color: rgba(0, 0, 0, 0.2);
   transition: all 500ms linear;
 }
@@ -292,9 +288,50 @@ img {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
-
   background-color: #fff;
 }
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+} */
+/* END backdrop opening V1 */
+
+/* backdrop opening V2 ---------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 500ms linear;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 500ms linear 500ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 500ms linear 0ms;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  height: 581px;
+  background-color: #fff;
+  transition: all 500ms linear 500ms;
+}
+/* END backdrop opening V2 ------------*/
 
 .close-btn {
   position: absolute;
@@ -308,11 +345,6 @@ img {
   cursor: pointer;
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 /*  ============ END HERO ============ */
 
 /*  ============ FEATURES SECTION ============ */
@@ -323,7 +355,7 @@ img {
 
 .features-list-li::before {
   display: block;
-  content: '';
+  content: "";
   height: 120px;
   background-repeat: no-repeat;
   background-position: center;
@@ -442,8 +474,7 @@ img {
   background: #ffffff;
   /* material shadow v1 */
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -631,16 +662,14 @@ img {
   border-radius: 4px;
   padding: 6px 22px;
 
-  transition: background-color 250ms var(--timing-function),
-    color 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .portfolio-menu-list-link:hover,
 .portfolio-menu-list-link:focus {
   color: var(--text-color-white);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* ----- END menu ----- */
 
@@ -688,8 +717,7 @@ img {
 
 .portfolio-items-link:hover,
 .portfolio-items-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* portfolio overlay */
